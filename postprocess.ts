@@ -1,6 +1,6 @@
 import {
-  readJSON,
   readCSV,
+  readJSON,
   writeCSV,
 } from "https://deno.land/x/flat@0.0.10/mod.ts";
 
