@@ -10,10 +10,8 @@ const json = await readJSON(filename);
 const newFilename = "history.csv";
 const history = await readCSV(newFilename);
 
-history.push({
+await writeCSV(newFilename, [{
   temperature: json.temperature,
   description: json.description,
   date: new Date().toISOString(),
-});
-
-await writeCSV(newFilename, history);
+}, ...history]);
