@@ -10,8 +10,10 @@ const json = await readJSON(filename);
 const newFilename = "history.csv";
 const history = await readCSV(newFilename);
 
+const processTemperature = (raw: string) => raw.replace(/^+/, "");
+
 await writeCSV(newFilename, [{
-  temperature: json.temperature,
+  temperature: processTemperature(json.temperature),
   description: json.description,
   date: new Date().toISOString(),
 }, ...history]);
