@@ -6,7 +6,6 @@ import {
 import { processTemperature } from "./utils.ts";
 
 const filename = Deno.args[0];
-const date = Deno.args[1]
 const json = await readJSON(filename);
 
 const newFilename = "history.csv";
@@ -15,5 +14,5 @@ const history = await readCSV(newFilename);
 await writeCSV(newFilename, [{
   "temperature in °C": processTemperature(json.temperature),
   description: json.description,
-  date: new Date(date).toISOString(),
+  date: new Date().toISOString(),
 }, ...history]);
