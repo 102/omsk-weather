@@ -2,7 +2,7 @@ import {
   readCSV,
   readJSON,
   writeCSV,
-} from "https://deno.land/x/flat@0.0.10/mod.ts";
+} from "https://deno.land/x/flat@0.0.11/mod.ts";
 import { processTemperature } from "./utils.ts";
 
 const filename = Deno.args[0];
