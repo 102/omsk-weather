@@ -1,1 +1,1 @@
-{"temperature":"+23 °C","wind":"7 km/h","description":"Partly cloudy","forecast":[{"day":"1","temperature":"24 °C","wind":"18 km/h"},{"day":"2","temperature":"+24 °C","wind":"15 km/h"},{"day":"3","temperature":" °C","wind":"4 km/h"}]}
+{"temperature":"15 °C","wind":"4 km/h","description":"Clear","forecast":[{"day":"1","temperature":"25 °C","wind":"13 km/h"},{"day":"2","temperature":"30 °C","wind":"17 km/h"},{"day":"3","temperature":"+27 °C","wind":"10 km/h"}]}
