@@ -23,3 +23,4 @@ jobs:
           http_url: https://api.weatherapi.com/v1/current.json?key=${{ secrets.API_KEY }}&q=Omsk&aqi=no
           downloaded_filename: weather.json
           postprocess: ./postprocess.ts
+          mask: '["${{ secrets.API_KEY }}"]'
