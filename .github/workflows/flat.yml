@@ -20,6 +20,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v3
         with:
-          http_url: https://goweather.herokuapp.com/weather/omsk
+          http_url: https://api.weatherapi.com/v1/current.json?key=${{ secrets.API_KEY }}&q=Omsk&aqi=no
           downloaded_filename: weather.json
           postprocess: ./postprocess.ts
