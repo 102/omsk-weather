@@ -18,7 +18,7 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v3
       - name: Fetch data
-        uses: githubocto/flat@v3
+        uses: githubocto/flat@3.4.0
         with:
           http_url: https://api.openweathermap.org/data/2.5/weather?lat=54.99&lon=73.36&units=metric&appid=${{ secrets.OPENWEATHERMAP_API_KEY }}
           downloaded_filename: weather.json
