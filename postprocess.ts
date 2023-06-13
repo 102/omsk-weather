@@ -2,7 +2,7 @@ import {
   readCSV,
   readJSON,
   writeCSV,
-} from "https://deno.land/x/flat@0.0.14/mod.ts";
+} from "https://deno.land/x/flat@0.0.15/mod.ts";
 
 const filename = Deno.args[0];
 const json = await readJSON(filename);
