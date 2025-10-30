@@ -1,16 +1,16 @@
-import { readJSON, writeTXT } from "https://deno.land/x/flat@0.0.15/mod.ts";
+import { readJSON, writeCSV } from "https://deno.land/x/flat@0.0.15/mod.ts";
+import { stringify } from "jsr:@std/csv@1.0.6";
 
 const filename = Deno.args[0];
 const json = await readJSON(filename);
 
 const newFilename = "history.csv";
 
-const wrapDescription = (description: string) => (description.includes(",") ? `"${description}"` : description);
-
-await writeTXT(
+await writeCSV(
   newFilename,
-  [json.main.temp, wrapDescription(json.weather[0].main), new Date().toISOString()].join(",") + "\n",
-  {
-    append: true,
-  }
+  await stringify([{ temp: json.main.temp, desc: json.weather[0].main, date: new Date().toISOString() }], {
+    headers: false,
+    columns: ["temp", "desc", "date"],
+  }),
+  { append: true }
 );
