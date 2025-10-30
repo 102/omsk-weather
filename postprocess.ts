@@ -8,9 +8,9 @@ const newFilename = "history.csv";
 
 await writeCSV(
   newFilename,
-  await stringify([{ temp: json.main.temp, desc: json.weather[0].main, date: new Date().toISOString() }], {
-    headers: false,
-    columns: ["temp", "desc", "date"],
-  }),
+  stringify(
+    [{ "temperature in °C": json.main.temp, description: json.weather[0].main, date: new Date().toISOString() }],
+    { headers: false, columns: ["temperature in °C", "description", "date"] }
+  ),
   { append: true }
 );
